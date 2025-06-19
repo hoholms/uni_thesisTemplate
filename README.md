@@ -24,6 +24,7 @@ Latex on Linux is more stable in this regard.
 Run the following commands to install the required packages and fonts:
 
 ```shell
+cd ~
 sudo apt update
 sudo apt install fonts-liberation xz-utils texlive-bibtex-extra biber texlive texlive-lang-cyrillic texlive-lang-european python3-pygments latexmk texlive-xetex # liberation font, font utils, latex, python
 curl -L -O https://notabug.org/ArtikusHG/times-new-roman/raw/master/times.tar.xz
