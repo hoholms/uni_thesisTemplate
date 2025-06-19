@@ -1,0 +1,74 @@
+\section{Введение в Learn Git Branching}\label{sec:--learn-git-branching}
+Learn Git Branching — это интерактивный веб-тренажер для изучения Git.
+Он визуализирует структуру коммитов и веток, что сильно упрощает понимание команд.
+На \refFigure{git-branching/basics/c1t1.png} представлен интерфейс тренажера в начале первого задания.
+
+\imageWithCaption{git-branching/basics/c1t1.png}{Главный экран Learn Git Branching}
+\label{fig:lgb_main_screen}
+
+
+\section{Основные уровни: ветвление и слияние}\label{sec:-:---}
+Начальные уровни посвящены базовым командам, таким как создание коммитов, ветвление и слияние.
+
+\subsection{Команды \texttt{git commit} и \texttt{git branch}}\label{subsec:-texttt{git-commit}--texttt{git-branch}}
+Первые уроки знакомят с основами: созданием коммитов и веток.
+На \refFigure{git-branching/basics/c1t1.png} показано решение задачи на создание коммита.
+На \refFigure{git-branching/basics/c1t3.png} — создание новой ветки.
+
+\imageWithCaption{git-branching/basics/c1t1.png}{Создание коммита}
+\label{fig:lgb_commit}
+
+\imageWithCaption{git-branching/basics/c1t3.png}{Создание новой ветки}
+\label{fig:lgb_branch}
+
+\subsection{Команды \texttt{git merge} и \texttt{git rebase}}\label{subsec:-texttt{git-merge}--texttt{git-rebase}}
+Я изучил два способа объединения веток: слияние (\texttt{merge}) и перебазирование (\texttt{rebase}).
+\texttt{Merge} создает новый коммит слияния, сохраняя обе истории веток.
+\texttt{Rebase} переписывает историю, делая ее линейной.
+На \refFigure{git-branching/remotes/c2t2.png} показан результат выполнения команды \texttt{git merge}.
+На \refFigure{git-branching/remotes/c2t1.png} — результат \texttt{git rebase}.
+
+\imageWithCaption{git-branching/remotes/c2t2.png}{Результат слияния веток}
+\label{fig:lgb_merge}
+
+\imageWithCaption{git-branching/remotes/c2t1.png}{Результат перебазирования ветки}
+\label{fig:lgb_rebase}
+
+
+\section{Продвинутые уровни: перемещение по истории}\label{sec:-:---2}
+В продвинутых уроках я познакомился с более сложными техниками, такими как выборочный перенос коммитов и отмена изменений.
+
+\subsection{Команда \texttt{git cherry-pick}}\label{subsec:-texttt{git-cherry-pick}}
+Команда \texttt{git cherry-pick} позволяет скопировать коммит из одной ветки в другую.
+Это полезно, когда нужно применить конкретное изменение, не сливая всю ветку.
+На \refFigure{git-branching/basics/c5t3.png} показано применение этой команды.
+
+\imageWithCaption{git-branching/basics/c5t3.png}{Использование cherry-pick для копирования коммита}
+\label{fig:lgb_cherry_pick}
+
+\subsection{Команда \texttt{git reset} и \texttt{git revert}}\label{subsec:-texttt{git-reset}--texttt{git-revert}}
+Я также изучил способы отмены изменений. \texttt{git reset} откатывает ветку к определенному коммиту, удаляя последующие. \texttt{git revert} создает новый коммит, который отменяет изменения указанного коммита, сохраняя историю.
+На \refFigure{git-branching/basics/c2t4.png} показан пример использования \texttt{git reset} для отката к предыдущему коммиту, а также \texttt{revert} для отмены коммита, создавая новый коммит с противоположными изменениями.
+
+\imageWithCaption{git-branching/basics/c2t4.png}{Использование reset для отката к предыдущему коммиту и revert для отмены коммита (создание нового коммита)}
+\label{fig:lgb_reset_revert}
+
+
+\section{Работа с удаленными репозиториями}\label{sec:---}
+Отдельный блок заданий посвящен работе с удаленными репозиториями.
+Я освоил команды для клонирования репозитория (\texttt{git clone}), отправки изменений на сервер (\texttt{git push}) и получения обновлений (\texttt{git pull} и \texttt{git fetch}).
+На \refFigure{git-branching/remotes/c1t1.png} показан пример клонирования удаленного репозитория.
+
+\imageWithCaption{git-branching/remotes/c1t1.png}{Клонирование удаленного репозитория}
+\label{fig:lgb_clone}
+
+На \refFigure{git-branching/remotes/c2t5.png} показан результат отправки своих изменений на удаленный сервер.
+
+\imageWithCaption{git-branching/remotes/c2t5.png}{Отправка изменений с помощью \texttt{git push}}
+\label{fig:lgb_push}
+
+
+\chapterConclusionSection{git_branching_chapter_title}
+В этой главе я задокументировал прохождение интерактивного курса Learn Git Branching.
+Визуализация процесса помогла мне глубоко понять механику работы веток в Git.
+Я освоил как базовые операции (\texttt{commit}, \texttt{branch}, \texttt{merge}), так и более сложные (\texttt{rebase}, \texttt{cherry-pick}).

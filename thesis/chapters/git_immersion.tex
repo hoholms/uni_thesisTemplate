@@ -1,0 +1,148 @@
+\section{Уроки 1--15: Основы локального репозитория}\label{sec:1-15}
+В данном разделе рассмотрены базовые операции с локальным репозиторием:
+
+\begin{itemize}
+    \item \textbf{Setup and More Setup} — установка Git, конфигурация имени и e‑mail.
+    \item \textbf{Create a Project} — инициализация нового проекта (\texttt{git init}).
+    \item \textbf{Checking Status} — проверка состояния репозитория (\texttt{git status}).
+    \item \textbf{Making Changes} — изменение файлов.
+    \item \textbf{Staging Changes} — добавление изменений в индекс (\texttt{git add}).
+    \item \textbf{Staging and Committing} — подготовка и создание коммитов.
+    \item \textbf{Committing Changes} — подробности создания коммита.
+    \item \textbf{Changes, not Files} — отслеживание изменений, а не файлов.
+    \item \textbf{History} — просмотр истории (\texttt{git log}).
+    \item \textbf{Aliases} — настройка («alias») для удобства.
+    \item \textbf{Getting Old Versions} — возврат к старым версиям.
+    \item \textbf{Tagging versions} — создание тегов для версий.
+    \item \textbf{Undoing Local Changes (before staging)} — откат изменений до стадии индексации.
+    \item \textbf{Undoing Staged Changes (before committing)} — снятие из индекса.
+    \item \textbf{Undoing Committed Changes} — отмена последнего коммита.
+\end{itemize}
+
+\paragraph{Описания.} Ниже — демонстрация команд и мест для скриншотов:
+
+\begin{minted}{shell}
+# Setup
+git config --global user.name "Ваше Имя"
+git config --global user.email "email@example.com"
+
+# Initialize
+git init myproject
+
+# Check status
+cd myproject
+git status
+# … далее git add, git commit …
+\end{minted}
+
+\imageWithCaption{git-immersion/staging.png}{Проверка статуса после инициализации и первые коммиты}
+\label{fig:git_immersion_staging}
+
+\paragraph{Настройка алиасов.} В этом разделе я также настроил алиасы для удобства работы с Git.
+Ниже приведен пример конфигурации алиасов, которые я использую:
+\begin{minted}{shell}
+# //=============\\
+# || Git Aliases ||
+# \\=============//
+
+alias g='git'
+alias ga='git add'
+alias gc='git commit -v'
+alias gcam='git commit -am'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gf='git fetch'
+alias gfp='git fetch && git pull'
+alias glgg='git log --graph'
+alias glgga='git log --graph --decorate --all'
+alias glgm='git log --graph --max-count=10'
+alias gp='git push'
+alias gpom='git push origin master'
+alias grmc='git rm --cached'
+alias gst='git status'
+
+\end{minted}
+
+\clearpage
+
+
+\section{Уроки 16--30: Ветвление, слияние и история}\label{sec:16-30}
+Этот блок посвящен веткам и управлению ими:
+
+\begin{itemize}
+    \item \textbf{Removing Commits from a Branch} — удаление последних коммитов (пример: \texttt{git reset --hard HEAD~2}).
+    \item \textbf{Remove the oops tag} — удаление тега (\texttt{git tag -d oops}).
+    \item \textbf{Amending Commits} — правка последнего коммита (\texttt{git commit --amend}).
+    \item \textbf{Moving Files} — перемещение/переименование в Git (\texttt{git mv}).
+    \item \textbf{More Structure} — организация структуры проекта.
+    \item \textbf{Creating a Branch} — создание ветки (\texttt{git branch feature1}).
+    \item \textbf{Navigating Branches} — переключение между ветками (\texttt{git checkout feature1}).
+    \item \textbf{Changes in Main} — внесение изменений в \texttt{main}.
+    \item \textbf{Viewing Diverging Branches} — обзор разветвлений (\texttt{git log --graph --decorate --all}).
+    \item \textbf{Merging} — слияние веток (\texttt{git merge feature1}).
+    \item \textbf{Creating a Conflict} — искусственное создание конфликта (изменение одного и того же файла).
+    \item \textbf{Resolving Conflicts} — разрешение конфликта в редакторе, \texttt{git add`, `git commit}.
+\end{itemize}
+
+\paragraph{Пример команд:}
+\begin{minted}{shell}
+git checkout -b feature1
+# вносим изменения в файл.txt
+git add файл.txt
+git commit -m "Добавили в feature1"
+
+git checkout main
+echo "Конфликтная строка" >> файл.txt
+git commit -am "Изменение в main"
+
+git merge feature1
+# появится конфликт…
+# → разрешаем, фиксируем, снова commit
+\end{minted}
+
+\clearpage
+
+
+\section{Уроки 31--53: Удалённые репозитории (опционально)}\label{sec:31-53}
+Если пройдены уроки с 31–53, опишите работу с GitHub:
+
+\begin{itemize}
+    \item git remote add
+    \item git push
+    \item git pull
+    \item git clone
+\end{itemize}
+
+\paragraph{Пример:}
+\begin{minted}{shell}
+# Клонирование
+git clone https://github.com/hoholms/uni_thesisTemplate
+cd uni_thesisTemplate
+
+# Добавить удалённый
+git remote add origin git@github.com:hoholms/uni_thesisTemplate.git
+
+# Отправить изменения
+git push -u origin main
+
+# Забрать обновления
+git pull origin main
+\end{minted}
+
+\clearpage
+
+\section*{Заключение\label{sec:conclusion}}
+\addcontentsline{toc}{section}{Заключение}
+В этой главе задокументирован процесс прохождения курса Git Immersion: от базовых команд до работы с удалёнными репозиториями.
+Это крепко закрепило навыки работы с Git как с \ac{VCS} и подготовило к командной работе в реальном проекте.
+
+В качестве доказательства навыков работы с Git (помимо задач выполненных во время практики), представляю ссылку на репозиторий с исходным кодом и текстом отчета: \github.
+Также, в профиле GitHub можно найти другие проекты, где я применяю Git для контроля версий.
+
+\section*{Сертификат}
+
+На \refFigure{certif-git.jpg} представлен сертификат об успешном прохождении курса по Git на Udemy (\href{https://www.udemy.com/certificate/UC-43d72581-dc6c-4add-90a7-48f60475e13f/}{Ссылка на сертификат об окончании курса Udemy}):
+
+\imageWithCaption{certif-git.jpg}{\href{https://www.udemy.com/course/git-and-github-bootcamp/}{The Git \& Github Bootcamp} Udemy сертификат}
+\label{fig:udemy_certif_git}
+

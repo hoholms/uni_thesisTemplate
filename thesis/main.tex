@@ -1,0 +1,175 @@
+\documentclass[a4paper,12pt]{report}
+
+% Подключаем пакет конфигурации из шаблона
+\usepackage[russian]{config}
+\usepackage{hyperref}
+
+% --- Основные данные ---
+\newcommand{\uniGroupName}{I-2402}
+\newcommand{\authorName}{Bugaenco Nichita}
+\newcommand{\thesisTitle}{Raport de practică: Explorarea formatului \LaTeX{} și a sistemului de control al versiunilor Git}
+\newcommand{\thesisType}{practică}
+\newcommand{\programulDeStudii}{licență}
+\newcommand{\identificatorulCursului}{0613.3 Informatică}
+\newcommand{\conducatorName}{Curmanschii Anton}
+
+\newcommand{\authorNameRu}{Бугаенко Никита Игоревич}
+\newcommand{\thesisTitleRu}{Отчет по практике: Изучение \LaTeX{} и системы контроля версий Git}
+\newcommand{\thesisTypeRu}{практической работе}
+\newcommand{\programulDeStudiiRu}{бакалавриата}
+\newcommand{\identificatorulCursuluiRu}{0613.4 Информатика}
+\newcommand{\conducatorNameRu}{Курманский Антон}
+
+\newcommand{\conferencesList}{Студенческая конференция UTM, \year~года}
+\renewcommand{\year}{2025}
+\newcommand{\github}{\url{https://github.com/hoholms/uni_thesisTemplate}}
+\newcommand{\outputDate}{\today}
+
+\begin{document}
+
+% Генерация титульного листа
+    \titlePage
+
+    \clearpage
+    \tableofcontents
+
+    \clearpage
+    \unnumberedChapter{Аннотация}
+
+    \textbf{к \thesisTypeRu{} ``\thesisTitleRu{}'', студента \authorNameRu{}, группа \uniGroupName{}, программа обучения \programulDeStudiiRu.}
+
+    \textbf{Структура работы.}
+    Работа состоит из: Введения, \chapterCount{} глав, Общих выводов и рекомендаций, Библиографии из \bibliographyEntryCount{} наименований и \anexeCount{} приложений.
+    Основной текст занимает \usefulPageCount{} страниц.
+
+    \textbf{Ключевые слова:}
+    \textit{\LaTeX{}, Git, \ac{VCS}, \ac{PR}, Branch, Commit, Merge, Rebase, Cherry-Pick, Reset, Revert}
+
+    \textbf{Актуальность.}
+    В современной разработке программного обеспечения профессиональное владение инструментами для документирования и контроля версий является обязательным. \LaTeX{} представляет собой стандарт де-факто для написания научных и технических работ,
+    обеспечивая высокое качество типографики.
+    Git является самой популярной системой контроля версий, необходимой для эффективной командной и индивидуальной разработки.
+    Освоение этих инструментов на начальном этапе карьеры создает прочный фундамент для будущего профессионального роста.
+
+    \textbf{Цель и задачи.}
+    Целью данной работы является документирование процесса изучения и практического применения системы верстки \LaTeX{} и системы контроля версий Git.
+    Задачи:
+    \begin{itemize}
+        \item Изучить и настроить шаблон \LaTeX{} для создания технических отчетов.
+        \item Пройти интерактивный курс по ветвлению в Git (Learn Git Branching) и задокументировать ключевые этапы.
+        \item Пройти практический курс Git Immersion для закрепления навыков работы с Git и задокументировать выполнение уроков.
+    \end{itemize}
+
+    \textbf{Полученные результаты.}
+    В ходе выполнения практической работы были получены и закреплены навыки работы с \LaTeX{} для создания структурированных документов и с Git для управления версиями исходного кода.
+    Был создан данный отчет, демонстрирующий полученные знания.
+
+    \textbf{Практическая ценность.}
+    Результатом работы является структурированный отчет, который может служить методическим пособием для других студентов, начинающих изучение \LaTeX{} и Git.
+    Весь исходный код и текст отчета доступны на GitHub, что позволяет использовать его как реальный пример проекта.
+
+    Весь исходный код проекта доступен на GitHub по следующей ссылке: \github.
+
+    \clearpage
+    \unnumberedChapter{Список сокращений}
+    \begin{acronym}[JPEG]
+        \acro{VCS}{Version Control System}
+        \acro{PR}{Pull Request}
+        \acro{GUI}{Graphical User Interface}
+    \end{acronym}
+
+    \introChapter
+
+    \textbf{Актуальность и важность темы.}
+    В современном мире IT специалист должен не только писать код, но и уметь грамотно оформлять документацию, а также эффективно управлять историей изменений своего проекта.
+    \LaTeX{} позволяет создавать профессионально выглядящие документы, что особенно важно в академической и научной среде.
+    Git является индустриальным стандартом для контроля версий, без которого немыслима ни одна серьезная разработка.
+    Изучение этих технологий является ключевой инвестицией в профессиональное развитие.
+
+    \textbf{Цель и задачи.}
+    Цель: Получить и закрепить практические навыки использования \LaTeX{} и Git.
+    Задачи:
+    \begin{itemize}
+        \item Детально изучить структуру и возможности шаблона \LaTeX{} для дипломных работ.
+        \item Освоить механики ветвления в Git через интерактивный тренажер.
+        \item Пройти пошаговое руководство по основным командам Git для ежедневного использования.
+        \item Систематизировать и задокументировать полученные знания в виде отчета по практике.
+    \end{itemize}
+
+    \textbf{Методологическая и технологическая база.}
+    \begin{itemize}
+        \item Система верстки: \LaTeX{} с дистрибутивом MaKTeX\@.
+        \item Редактор кода: IntelliJ IDEA с плагином TeXiFy-IDEA\@.
+        \item Шаблон для отчета: \texttt{uni\_thesisTemplate} от Антона Курманского.
+        \item Интерактивный тренажер по Git: Learn Git Branching\cite{gitbranching}.
+        \item Практическое руководство по Git: Git Immersion\cite{gitimmersion}.
+    \end{itemize}
+
+    \textbf{Краткое содержание работы.}
+
+    Первая глава, \nameref{ch:latex_chapter_title}, посвящена изучению шаблона \LaTeX{}.
+    В ней описывается процесс установки, настройки и использования основных элементов шаблона: работа с текстом, кодом, изображениями и таблицами.
+
+    Вторая глава, \nameref{ch:git_branching_chapter_title}, документирует прохождение интерактивного курса Learn Git Branching.
+    Представлены решения ключевых задач по созданию веток, слиянию, перемещению и другим операциям в Git.
+
+    Третья глава, \nameref{ch:git_immersion_chapter_title}, описывает выполнение практических уроков из руководства Git Immersion, охватывающих основной рабочий процесс с Git, от создания репозитория до работы с удаленными серверами.
+
+
+% --- ГЛАВА 1: Изучение LaTeX ---
+
+
+    \chapter{Изучение и настройка шаблона \LaTeX{}}\label{ch:latex_chapter_title}
+
+    \input{chapters/latex}
+
+
+% --- ГЛАВА 2: Learn Git Branching ---
+
+
+    \chapter{Практика с Learn Git Branching}\label{ch:git_branching_chapter_title}
+
+    \input{chapters/git_branching}
+
+
+% --- ГЛАВА 3: Git Immersion ---
+
+
+    \chapter{Освоение Git Immersion}\label{ch:git_immersion_chapter_title}
+
+    \input{chapters/git_immersion}
+
+
+% --- Заключение ---
+    \unnumberedChapter{Заключительные выводы и рекомендации}
+
+    В ходе выполнения данной практической работы я достиг поставленных целей: изучил основы системы верстки \LaTeX{} и получил уверенные практические навыки работы с системой контроля версий Git.
+
+    \begin{itemize}
+        \item Использование \LaTeX{} и готового шаблона позволило мне сосредоточиться на содержании отчета, не отвлекаясь на ручное форматирование, и получить на выходе документ профессионального качества.
+        \item Интерактивный тренажер Learn Git Branching помог наглядно понять сложные концепции ветвления, которые являются ядром Git.
+        \item Руководство Git Immersion закрепило полученные знания через практику в командной строке, имитирующую реальный рабочий процесс.
+    \end{itemize}
+
+    Полученные навыки являются фундаментальными для любого современного IT-специалиста.
+    Я планирую и дальше использовать \LaTeX{} для документирования проектов и Git для контроля версий во всех своих учебных и личных работах.
+
+    Весь исходный код, включая программный код и текст работы
+    в форме до рендеринга, доступен на GitHub по следующей ссылке: \github.
+
+% Генерирует главу "Библиография"
+    \bibliographyChapter
+
+% --- Приложения ---
+%    \appendixChapter
+%
+%
+%    \section{Пример файла для вставки в приложение}\label{sec:-----}
+%    \label{appendix:example_code}
+%    \inputminted{js}{../src/appendix_example.js}
+
+% --- Страница с декларацией ---
+    \declarationPage{}
+
+\end{document}
+% vim: fdm=syntax

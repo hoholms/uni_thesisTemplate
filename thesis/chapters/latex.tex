@@ -1,0 +1,53 @@
+\section{Установка и первая компиляция}\label{sec:---}
+Здесь начинается мое знакомство с \LaTeX{}.
+Для работы я установил дистрибутив MacTeX и установил плагин TeXiFy-IDEA в IDE IntelliJ IDEA\@.
+Процесс установки прошел гладко с использованием утилиты \texttt{brew}.
+После установки я склонировал репозиторий с шаблоном и открыл его в редакторе.
+
+На \refFigure{first_compile} показан результат первой успешной компиляции проекта.
+
+\imageWithCaption{latex-compile.png}{Результат первой компиляции}
+\label{fig:first_compile}
+
+
+\section{Структура и кастомизация шаблона}\label{sec:---2}
+Основной файл \texttt{main.tex} подключает все остальные части.
+Конфигурация вынесена в \texttt{config.sty}.
+Исходники для примеров кода находятся в папке \texttt{src/}, а изображения в папке \texttt{thesis/images}.
+
+Для изменения личных данных, названия работы и другой информации достаточно отредактировать блок \texttt{\textbackslash newcommand} в преамбуле \texttt{main.tex}.
+\begin{minted}{latex}
+        % Пример отредактированного блока
+        \newcommand{\authorNameRu}{Бугаенко Никита Игоревич}
+        \newcommand{\thesisTitleRu}{Отчет по практике: Изучение \LaTeX{} и системы контроля версий Git}
+\end{minted}
+
+
+\section{Документирование: работа с текстом, кодом и изображениями}\label{sec::------}
+В ходе работы над отчетом я ознакомился с основными командами для форматирования текста, создания списков, вставки таблиц, изображений и блоков кода.
+
+\subsection{Вставка блоков кода с помощью \texttt{minted}}\label{subsec:-----texttt{minted}}
+Пакет \texttt{minted} оказался очень удобным для отображения исходного кода.
+Он автоматически подсвечивает синтаксис для множества языков.
+\begin{minted}[frame=lines,
+    framesep=2mm,
+    linenos,
+    fontsize=\small]{javascript}
+        // Пример кода
+        function helloGit() {
+            console.log("Hello, Git Immersion!");
+        }
+\end{minted}
+
+\subsection{Вставка изображений}\label{subsec:-}
+Для вставки изображений (скриншотов) используется команда \texttt{\textbackslash imageWithCaption}.
+Она автоматически создает рисунок с подписью и добавляет его в список иллюстраций.
+На \refFigure{git_branching_example} приведен пример.
+
+\imageWithCaption{git-branching/basics/c5t3.png}{Пример выполнения задания в Learn Git Branching}
+\label{fig:git_branching_example}
+
+
+\chapterConclusionSection{latex_chapter_title}
+В этой главе я рассмотрел процесс установки и настройки рабочего окружения для \LaTeX{}, изучил структуру предоставленного шаблона и освоил базовые команды для наполнения документа контентом: текстом, кодом и изображениями.
+Этот опыт стал основой для документирования следующих этапов практики.
