@@ -16,12 +16,15 @@ Once you got WSL, refer to the [Ubuntu](#Ubuntu) section for further instruction
 
 Now, the template may work on Windows without WSL.
 The reason it's not recommended is because Latex is known
-to cause issues because of incorrect package versions.
-Latex on Linux is more stable.
+to cause issues on Windows because of incorrect package versions.
+Latex on Linux is more stable in this regard.
 
 ## Ubuntu
 
+Run the following commands to install the required packages and fonts:
+
 ```shell
+cd ~
 sudo apt update
 sudo apt install fonts-liberation xz-utils texlive-bibtex-extra biber texlive texlive-lang-cyrillic texlive-lang-european python3-pygments latexmk texlive-xetex # liberation font, font utils, latex, python
 curl -L -O https://notabug.org/ArtikusHG/times-new-roman/raw/master/times.tar.xz
@@ -49,7 +52,7 @@ fc-cache -f -v
 3. **Install Python** (skip if you already have Python).
 
    ```shell
-   brew install python # skip if you already have python
+   brew install python
    ```
 
 4. **Install Pygments:**
@@ -74,7 +77,7 @@ cd uni_thesisTemplate
 ## Compiling the Thesis
 
 1. **Choose Your Language:** Rename the main `.tex` file 
-   according to your language (`ru`/`ro`).
+   corresponding to your language (`ru`/`ro`).
 
    ```shell
    mv thesis/bare_main_ro.tex thesis/main.tex
